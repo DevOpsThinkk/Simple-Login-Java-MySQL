@@ -19,7 +19,7 @@ web:
     JDBC_PASS: PostgreSQL@2
   ports:
    - "8080:8080"
-  volumes:
-   - ./tomcat/webapps:/usr/local/tomcat/webapps
+  # volumes:
+  # - ./tomcat/webapps:/usr/local/tomcat/webapps
   links:
     - db
