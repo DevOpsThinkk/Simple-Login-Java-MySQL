@@ -5,8 +5,8 @@ db:
     MYSQL_DATABASE: sample
     # MYSQL_USER: user1
     # MYSQL_PASSWORD: PostgreSQL@2
-  ports:
-    - "3306:3306"
+#  ports:
+#    - "3306:3306"
   volumes:
    - ./db:/docker-entrypoint-initdb.d
 
