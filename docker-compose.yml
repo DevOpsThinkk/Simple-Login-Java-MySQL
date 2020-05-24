@@ -5,8 +5,8 @@ db:
     MYSQL_DATABASE: sample
     # MYSQL_USER: user1
     # MYSQL_PASSWORD: PostgreSQL@2
-#  ports:
-#    - "3306:3306"
+  ports:
+    - "3309:3306"
   volumes:
    - ./db:/docker-entrypoint-initdb.d
 
@@ -14,7 +14,7 @@ web:
   image: devopsthink/loginwebpage:latest
   # Environment variables do not appear to be getting loaded the first time Tomcat starts!
   environment:
-    JDBC_URL: jdbc:mysql://db:3306/sample?connectTimeout=0&amp;socketTimeout=0&amp;autoReconnect=true
+    JDBC_URL: jdbc:mysql://db:3309/sample?connectTimeout=0&amp;socketTimeout=0&amp;autoReconnect=true
     JDBC_USER: root
     JDBC_PASS: PostgreSQL@2
   ports:
