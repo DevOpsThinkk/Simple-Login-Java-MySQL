@@ -3,10 +3,10 @@ db:
   environment:
     MYSQL_ROOT_PASSWORD: PostgreSQL@2
     MYSQL_DATABASE: sample
-    # MYSQL_USER: root
-    # MYSQL_PASSWORD: PostgreSQL
-#  ports:
-#    - "3306:3306"
+    # MYSQL_USER: user1
+    # MYSQL_PASSWORD: PostgreSQL@2
+  ports:
+    - "3306:3306"
   volumes:
    - ./db:/docker-entrypoint-initdb.d
 
@@ -19,7 +19,7 @@ web:
     JDBC_PASS: PostgreSQL@2
   ports:
    - "8080:8080"
-  volumes:
-   - ./tomcat/webapps:/usr/local/tomcat/webapps
+  # volumes:
+  # - ./tomcat/webapps:/usr/local/tomcat/webapps
   links:
     - db
